@@ -25,7 +25,6 @@ def contadorCustom():
     f = int(input('Fim: '))
     p = int(input('Passo: '))
     return contador(i, f, p)
-    print('-'*30)
 
 
 contador(1, 10, 1)
