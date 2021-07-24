@@ -1,6 +1,12 @@
 from time import sleep
 
 def contador(i, f, p):
+    """
+    -> Faz uma contagem e mostra na tela
+    :param i: início contagem
+    :param f: fim contagem
+    :param p: passo contagem
+    """
     p = abs(p)
     if p == 0:
         p = 1
