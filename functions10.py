@@ -1,4 +1,4 @@
-def notas(*notas, status=False):
+'''def notas(*notas, status=False):
     fichaAluno = {}
     fichaAluno["notas"] = notas
     fichaAluno["total"] = len(fichaAluno["notas"])
@@ -32,6 +32,29 @@ def notas(*notas, status=False):
 
 
 aluno = notas(8, 5, 7, 8, 10, status=True)
+print(aluno)'''
+
+
+#refatoração
+def notas(*notas, status=False):
+    fichaAluno = {}
+    fichaAluno["total"] = len(notas)
+    fichaAluno["maior"] = max(notas)
+    fichaAluno["menor"] = min(notas)
+    fichaAluno["media"] = sum(notas)/len(notas)    
+    if status:
+        if fichaAluno["media"] < 5:
+            fichaAluno["status"] = 'RUIM'
+        elif fichaAluno["media"] <= 7:
+            fichaAluno["status"] = 'RAZOÁVEL'
+        elif fichaAluno["media"] <= 9:
+            fichaAluno["status"] = 'BOM'
+        else:
+            fichaAluno["status"] = 'EXCELENTE'
+    return fichaAluno
+
+
+aluno = notas(10, 5, 4.5, 6, 9, status=False)
 print(aluno)
 
 
